@@ -38,6 +38,9 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
 # Install bash
 RUN apk add --no-cache bash
 
+# Use bash
+SHELL ["/bin/bash", "-c"]
+
 # Intsall docker compose
 RUN wget https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -O /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose 
